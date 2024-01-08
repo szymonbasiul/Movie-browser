@@ -17,7 +17,7 @@ export const Wrapper = styled(Link)`
  box-shadow: ${({ theme }) => theme.properties.tile.boxShadow};
 
  &:hover {
-  box-shadow: -1px 2px 7px 8px rgba(148, 255, 249, 1);
+    box-shadow: -1px 2px 7px 8px ${({ theme }) => theme.colors.tile.hoveredShadow};
  }
 
  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.s}) {
