@@ -7,8 +7,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
-
-    data: dataReducer
+    data: dataReducer,
   },
   middleware: [sagaMiddleware],
 });
