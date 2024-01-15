@@ -1,7 +1,6 @@
-import { put, call, takeEvery, delay, takeLatest } from "redux-saga/effects";
+import { put, call, delay, takeLatest } from "redux-saga/effects";
 import {
   fetchPopularPeople,
-  fetchSearchResults,
   setPeople,
   setStatus,
   setPersonDetails,
@@ -11,6 +10,7 @@ import {
   fetchPersonCredits,
   setPersonCredits,
   fetchPeopleSearchResults,
+  setTotalResults,
 } from "../redux/dataSlice";
 import { getPopular } from "./getPopular";
 import { getSearchResults } from "./getSearchResults";
@@ -66,6 +66,7 @@ function* fetchSearchResultsHandler({ payload }) {
     );
     yield put(setPage(data.page));
     yield put(setTotalPages(data.total_pages > 500 ? 500 : data.total_pages));
+    yield put(setTotalResults(data.total_results));
     yield put(setPeople(data.results));
     yield delay(1000);
     yield put(setStatus("success"));

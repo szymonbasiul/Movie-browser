@@ -11,6 +11,7 @@ import {
   fetchPopularMovies,
   fetchMovieCredits,
   fetchMoviesSearchResults,
+  setTotalResults,
 } from "../redux/dataSlice";
 import { getPopular } from "./getPopular";
 import { getSearchResults } from "./getSearchResults";
@@ -67,6 +68,7 @@ function* fetchSearchResultsHandler({ payload }) {
     const genres = yield call(getGenres);
     yield put(setPage(data.page));
     yield put(setTotalPages(data.total_pages > 500 ? 500 : data.total_pages));
+    yield put(setTotalResults(data.total_results));
     yield put(setMovies(data.results));
     yield put(setGenres(genres));
     yield delay(1000);
