@@ -60,7 +60,7 @@ export default function MoviePage() {
            <IconStar />
            <ContainerRateText>
             {movieDetails.vote_average
-             ? movieDetails.vote_average.toFixed(2).toString().replace(".", ",")
+             ? movieDetails.vote_average.toFixed(1).toString().replace(".", ",")
              : "No votes yet"}
             <Rate>/ 10</Rate>
            </ContainerRateText>
