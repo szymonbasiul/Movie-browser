@@ -8,6 +8,7 @@ export const StyledNav = styled(NavLink)`
 
   &:hover {
     box-shadow: -1px 2px 7px 8px ${({ theme }) => theme.colors.tile.hoveredShadow};
+    transform: scale(1.03);
   }
 `;
 
